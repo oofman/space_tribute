@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CMS Bootstrap</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+  <%= render :partial => 'elements/nav' %>
+
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}", class: bootstrap_alert_class(name), role: 'alert' %>
+  <% end %>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>
