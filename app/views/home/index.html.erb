@@ -1,1 +1,7 @@
 <h1>Home Page</h1>
+
+<% @parsed.each do |photo| %>
+  <label>Earth Date:<%= photo['earth_date'] %></label><br/>
+  <img width="200" src="<%= photo['img_src'] %>"><br/><br/>
+
+<% end %>
